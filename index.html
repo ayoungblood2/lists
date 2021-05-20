@@ -96,7 +96,7 @@
       #top,
       #btm {
 
-        position: relative;
+        position: sticky;
         top: 0;
         left: 0;
         padding: 20px;
@@ -149,7 +149,7 @@
     <div class="wrap">
       <div class="left">
 
-        <a style="font-family: 'LANGULAIRE-PERSONAL';" href="#btm" id="top">&darr;</a>
+        <a style="font-family: 'LANGULAIRE-PERSONAL'; position: sticky;" href="#btm" id="top">&darr;</a>
         <br>
 
         <a href="#list1.html" id="1">1</a>
@@ -214,7 +214,7 @@
         <br>
 
 
-        <a style="font-family: 'LANGULAIRE-PERSONAL';" href="#top" id="btm">&uarr;</a>
+        <button style="font-family: 'LANGULAIRE-PERSONAL';"onclick="topFunction()" id="btm" title="Go to top">&uarr;</button>
 
 
       </div>
@@ -417,7 +417,27 @@
 
 
 
+<script>
+//Get the button
+var mybutton = document.getElementById("btm");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 
 
 
